@@ -31,10 +31,11 @@ class pair
       std::cout << "calling custom constructor" << std::endl;
     }
 
+    // another custom constructor
     pair(std::string a) {
       first = 20;
       second = 7.99;
-      std::cout << "HAHAHAH" << std::endl;
+      std::cout << a << std::endl;
     }
 
     // we have no destructor
@@ -52,7 +53,7 @@ class pair
     }
 
     // comparison operator
-    bool operator<(const pair<T1,T2> &other) {
+    bool operator<(const pair<T1,T2> &other) const {
       return ((first < other.first) ||
               (first == other.first && second < other.second));
     }
@@ -62,5 +63,6 @@ class pair
 }
 
 #endif
+
 
 
