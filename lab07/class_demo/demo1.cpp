@@ -14,7 +14,7 @@ public:
   }
 
   int get_year() {
-    return stoi(ID.substr(0,2))+2500;
+    return atoi(ID.substr(0,2).c_str())+2500;
   }
 
   bool same_year(Student b) {
