@@ -15,7 +15,7 @@ See [lab07](lab01). We are still on the introduction. We consider more in-depth 
 #### (2016-Jan-18)
 See [lab02](lab02). For this period, we start with a very basic data structure called `pair`. We familiarize ourself with the notion of _Template_, i.e., specification of types into a class. For example, `pair<int,string>` is a data structure that holds `int` and `string` together.
 
-Additionally, we also talk about vector. A vector is 
+Additionally, we also talk about vector. A vector is a _smart_ array. It works like an array such that we can access its element by numeric indices such as v[0], v[1], v[400]. Moreover, vector does not require us to declare its size. It can extend itself to cover the items that we put in it. Several access and modifier function are given such as `insert()`, `delete()`, `front()`, `pop_back()`, etc.
 
 **In-class exercise:** Write a program that receive a series of `n` integers from the user, the task is to create a vector that contains items in reverse order that the user have given. (see [reverse.cpp](lab02/exercise/reverse.cpp) for the starting code)
 
@@ -65,8 +65,11 @@ See [lab06](lab06). We have discussed `queue` and `stack`. Queue and Stack (and 
 We have a quiz today.
 
 #### (2016-Feb-08)
-See [lab07](lab07). This class starts the _development_ of our own data structure. A _Class_ in C++ is briefly review. It is almost the same as the class in Java where you are already familiar with. Two new concepts are shown: _constructor_ and _Operator Overloading_. Constructors of C++ are slightly different from that of Java. There are several types of constructor which are used in different situation. Overloading of Operator is entirely new concept. It allows us to define custom action for operator, such as +, ==, =, <, etc (see [main_overload.cpp](lab07/pair_demo/main_overload.cpp)).
+See [lab07](lab07). This session sees the start of the _development_ of our own data structure. A _Class_ in C++ is briefly review. It is almost the same as the class in Java where you are already familiar with. Two new concepts are shown: _constructor_ and _Operator Overloading_. Constructors of C++ are slightly different from that of Java. There are several types of constructor which are used in different situation. Overloading of Operator is entirely new concept. It allows us to define custom action for operator, such as +, ==, =, <, etc (see [main_overload.cpp](lab07/pair_demo/main_overload.cpp)).
 
 _No in-class exercise_
 
 **Topics:** class in c, header file (.h), #include, #ifndef, various kind of constructors, `CP::pair`, operator overloading, Pass-by-Reference vs Pass-by-Value in function (such as void test(&x)), `this->`, `const` keyword
+
+#### (2016-Feb-10)
+See [lab08](lab08). The first _non trivial_ data structure, CP::vector is discusses. Vector is an array that can extend itself indefinitely. The idea of automatically extending the array is the key idea of vector. Moreover, We use vector to introduce several convention that will be used in upcoming data structures. This includes `.size()`, `.empty()` and some of the constructor. Additionally, implementation of iterator is discussed in detail. This also cover the concept of pointer (see also [pointer_demo](lab08/pointer_demo/)
