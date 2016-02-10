@@ -13,8 +13,17 @@ int main() {
 
   ptr = mData;
 
+  *ptr = 200;
+  cout << *mData << endl;
+
   ptr = ptr + 3;
   *ptr = 10;
+
+  for (int i  = 0;i < 10;i++) {
+    cout << i << ": " << mData[3] << endl;
+
+  }
+  return 0;
 
   cout << endl << "mData is a pointer" << endl;
   cout << mData << endl;

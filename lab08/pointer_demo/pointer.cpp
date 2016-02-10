@@ -2,8 +2,9 @@
 
 using namespace std;
 
-void test(int &T) {
-
+void test(int *T) {
+  int xyz;
+  T = &xyz;
 }
 
 int main() {
@@ -23,15 +24,16 @@ int main() {
   cout << "&x  = " << &x << endl;
   cout << "px  = " << px << endl;
 
-
   cout << endl << "before" << endl;
   cout << "x: address = " << px << " value = " << x << endl;
   cout << "y: address = " << py << " value = " << y << endl;
   cout << "z: address = " << pz << " value = " << z << endl;
 
+  test(px);
+  cout << "x: address = " << px << " value = " << x << endl;
 
-  py++;
-  *py = 100;
+  pz = pz + 2;
+  *pz = 100;
   cout << endl << "afer" << endl;
   cout << "x: address = " << px << " value = " << x << endl;
   cout << "y: address = " << py << " value = " << y << endl;
