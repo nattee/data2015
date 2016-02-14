@@ -72,4 +72,13 @@ _No in-class exercise_
 **Topics:** class in c, header file (.h), #include, #ifndef, various kind of constructors, `CP::pair`, operator overloading, Pass-by-Reference vs Pass-by-Value in function (such as void test(&x)), `this->`, `const` keyword
 
 #### (2016-Feb-10)
-See [lab08](lab08). The first _non trivial_ data structure, CP::vector is discusses. Vector is an array that can extend itself indefinitely. The idea of automatically extending the array is the key idea of vector. Moreover, We use vector to introduce several convention that will be used in upcoming data structures. This includes `.size()`, `.empty()` and some of the constructor. Additionally, implementation of iterator is discussed in detail. This also cover the concept of pointer (see also [pointer_demo](lab08/pointer_demo/)
+See [lab08](lab08). The first _non trivial_ data structure, CP::vector is discussed. Vector is an array that can extend itself indefinitely. The idea of automatically extending the array is the key idea of vector. Moreover, We use vector to introduce several conventions that will be used in upcoming data structures. This includes `.size()`, `.empty()` and some of the constructor. We also see  life cycle of an object, we see when the constructor and destructor is called. 
+
+A major topic in this session is _pointer_. Pointer is a _modifier_ type of variable. Every type can be made pointer. A variable name `x` of pointer type of type `T` is declared as `T *x` where `x` stores the _memory address_ of a variable of type `T`. Please see also [pointer_demo](lab08/pointer_demo/) for more details.
+
+**In-class exercise:** Write a `triplet` class which is an extension of `pair` into a class that contains 3 members of various types. 
+
+**Topics:** Pointers, Array as Pointers, Constructor, Destructor, Initialization List syntax.
+
+#### (2016-Feb-15)
+We continue with the class CP::Vector. We see how it is extended automaticallly and how the iterator is implemented. Essentially, an iterator of a vector is implemented as a pointer. 
