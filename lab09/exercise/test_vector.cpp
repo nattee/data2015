@@ -12,6 +12,10 @@ bool test1() {
   size_t n = 10;
   CP::vector<int> myvector (n);   // 10 zero-initialized elements
 
+
+  //myvector.at(20) = 2000;
+  //myyvector[20]
+
   size_t sz = myvector.size();
 
   // assign some values:

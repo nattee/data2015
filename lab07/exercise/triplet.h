@@ -20,6 +20,12 @@ class triplet
 
     // default constructor, using initializer list
       //write something here
+    triplet() {
+      first = T1();
+      second = T2();
+      third = T3();
+
+    }
 
     // write some custom constructor
 
