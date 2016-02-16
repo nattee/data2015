@@ -78,7 +78,19 @@ A major topic in this session is _pointer_. Pointer is a _modifier_ type of vari
 
 **In-class exercise:** Write a `triplet` class which is an extension of `pair` into a class that contains 3 members of various types. 
 
-**Topics:** Pointers, Array as Pointers, Constructor, Destructor, Initialization List syntax.
+**Topics:** Pointers, Array as Pointers, Constructor, Destructor, Initialization List syntax, operator `new`
 
 #### (2016-Feb-15)
-We continue with the class CP::Vector. We see how it is extended automaticallly and how the iterator is implemented. Essentially, an iterator of a vector is implemented as a pointer. 
+We continue with the class CP::Vector. We see how it is extended automatically and how using pointer allow this to be done easily. We also see how the iterator is implemented. Essentially, an iterator of a vector is implemented as a pointer. However, when a vector is expanded automatically, the iterator which is a pointer is _invalidated_ and cannot be used.
+
+**Topics:** Automatic expansion of vector via the use of pointers, invalidation of iterator.
+
+**In-class exercise:** Write additional non-stl function for CP::vector. (See [lab09/exercise](lab09/exercise).)
+
+#### (2016-Feb-17)
+The last session before the second quiz and midterm. We discussed the class CP::queue (see [lab10](lab10)). 
+
+**Topics:** Circular queue
+
+**In-class exercise:** Write a simple queue that supports the operation of queue by using just only a vector. This will result in a sub-performance queue that simply works. 
+
