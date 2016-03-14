@@ -3,6 +3,7 @@
 
 #include <stdexcept>
 #include <iostream>
+#include <vector>
 //#pragma once
 
 namespace CP {
@@ -12,13 +13,13 @@ template <typename T>
 class priority_queue
 {
   protected:
-    vector<T> v;
+    std::vector<T> v;
 
   public:
     //-------------- constructor ----------
 
     // copy constructor
-    priority_queue()
+    priority_queue() {
     }
 
     // default constructor
@@ -29,13 +30,16 @@ class priority_queue
 
     //------------- capacity function -------------------
     bool empty() const {
+      return false;
     }
 
     size_t size() const {
+      return 0;
     }
 
     //----------------- access -----------------
     const T& top() {
+      return v[0];
     }
 
     //----------------- modifier -------------
