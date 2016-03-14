@@ -1,6 +1,6 @@
 #include <iostream>
 #include <queue>
-#include "queue_simple.h"
+#include "queue.h"
 #include <assert.h>
 #include <exception>
 
@@ -74,7 +74,7 @@ bool test3() {
 
 bool test4() {
   int nRun = 20;
-  int nData = 50000;
+  int nData = 200000;
   for (int i = 0;i < nRun;i++) {
     std::cout << "Running " << i+1 << " run." << std::endl;
     Queue q;
