@@ -11,10 +11,13 @@ class queue {
 protected:
   vector<T> mVect;
   size_t mFront;
+  size_t mSize;
 
 public:
     queue() {
       mFront = 0;
+      mSize = 0;
+      mVect.resize(10);
     }
 
     bool empty(){
@@ -30,10 +33,18 @@ public:
         return mVect[mVect.size()-1];
     }
     void push(const T& element){
-        mVect.push_back(element);
+//      if (mVect.size() == mSize)  {
+//        vector<T> tmp(mVect);
+//        mVect.resize( ( mVect.size() == 0 ? 1 : mVect.size() * 2) );
+//        for (size_t i = 0;i <mSize;i++) {
+//          mVect[i] = tmp[(mFront + i) % tmp.size()];
+//        }
+//        mFront = 0;
+//      }
+
+      mVect.push_back(element);
     }
     void pop(){
-        //mVect.erase(mVect.begin());
         mFront++;
     }
 
@@ -41,7 +52,7 @@ public:
 }
 
 void test1(){
-  CP::queue<int> q;
+  queue<int> q;
   assert(q.empty() == true);
   q.push(1);
   q.push(2);
@@ -67,7 +78,7 @@ void test1(){
 
 void test2(){
 
-  CP::queue<vector<int>> q;
+  queue<vector<int>> q;
   vector<int> v1;
   vector<int> v2;
   for(int i = 1 ; i <= 10 ; i++){
@@ -78,6 +89,27 @@ void test2(){
   assert(q.size() == 2);
   assert(q.front()[0] == 10);
   assert(q.back().empty() == true);
+}
+
+
+void test3new() {
+  queue<int> q;
+  for (int i = 0;i < 5;i++) {
+    q.push(i);
+    q.push(i);
+    q.push(i);
+
+    q.pop();
+    q.pop();
+  }
+  assert(q.size() == 5);
+  assert(q.front() == 3); q.pop();
+  assert(q.front() == 3); q.pop();
+  assert(q.front() == 4); q.pop();
+  assert(q.front() == 4); q.pop();
+  assert(q.front() == 4); q.pop();
+  assert(q.empty() );
+
 }
 
 void test3(){
@@ -93,6 +125,8 @@ void test3(){
 int main() {
   test1(); cout << "test1 OK " << endl;
   test2(); cout << "test2 OK " << endl;
-  test3(); cout << "test3 OK " << endl;
+  test3new(); cout << "test3new OK " << endl;
+
+  //test3(); cout << "test3 OK " << endl;
 
 }
