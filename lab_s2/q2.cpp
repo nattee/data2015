@@ -18,7 +18,7 @@ public:
     }
 
     bool empty(){
-       return mVect.size() == 0;
+       return size() == 0;
     }
     size_t size(){
         return mVect.size() - mFront;
@@ -82,20 +82,12 @@ void test2(){
 
 void test3(){
   CP::queue<string> q;
-  size_t n = 50000;
+  size_t n = 50000000;
   for(size_t i = 0 ; i < n ; i++){
     string a = "a";
     q.push(a);
-  }
-  assert(q.size() == n);
-  assert(q.front() == "a");
-  assert(q.back() == "a");
-
-  for (size_t i = q.size(); i > 1 ; i--){
     q.pop();
   }
-  assert(q.size() == 1);
-  assert(q.front() == "a");
 }
 
 int main() {
