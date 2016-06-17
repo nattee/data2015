@@ -11,6 +11,7 @@ namespace CP {
   class stack {
     protected:
       vector<T> mVect;
+      int a,b,c;
 
     public:
       stack() {
@@ -18,34 +19,32 @@ namespace CP {
       }
 
       size_t size() {
-        return 0;
+        return mVect.size();
 
       }
 
       bool empty() {
-        return false;
-
+        return mVect.empty();
       }
 
       T top() {
-        return T();
+        return mVect.back();
       }
 
       void pop() {
-
+        mVect.pop_back();
       }
 
       void push(T value) {
-
+        mVect.push_back(value);
       }
-
 
   };
 
 }
 
 void test1() {
-  stack<int> s;
+  CP::stack<int> s;
   assert(s.size() == 0);
   assert(s.empty());
 
@@ -65,7 +64,7 @@ void test1() {
 }
 
 void test2() {
-  stack<int> s1,s2;
+  CP::stack<int> s1,s2;
   s1.push(10);
   s1.push(20);
   s1.push(30);
@@ -88,7 +87,7 @@ void test2() {
 
 void test3() {
   int n = 1e7;
-  stack<float> s;
+  CP::stack<float> s;
   for (int i = 0;i < n/10;i++) {
     for (int j = 0;j < 10;j++) {
       s.push(0.5+j);

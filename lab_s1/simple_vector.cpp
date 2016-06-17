@@ -34,6 +34,8 @@ protected:
   }
 
 public:
+  typedef T* iterator;
+
   vector() : mSize(0) {
     mData = new T[1]();
   }
@@ -80,6 +82,14 @@ public:
 
   int size() {
     return mSize;
+  }
+
+  iterator begin() {
+    return mData;
+  }
+
+  iterator end() {
+    return mData+mSize;
   }
 
 };
