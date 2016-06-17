@@ -21,31 +21,24 @@ public:
     }
 
     bool empty(){
-       return size() == 0;
+      return mSize == 0;
     }
     size_t size(){
-        return mVect.size() - mFront;
+      return mSize;
     }
-     T& front(){
-        return mVect[mFront];
+
+    T& front(){
+      return mVect[mFront];
     }
      T& back(){
-        return mVect[mVect.size()-1];
+      return mVect[ (mFront + mSize - 1) % mVect.size()];
     }
     void push(const T& element){
-//      if (mVect.size() == mSize)  {
-//        vector<T> tmp(mVect);
-//        mVect.resize( ( mVect.size() == 0 ? 1 : mVect.size() * 2) );
-//        for (size_t i = 0;i <mSize;i++) {
-//          mVect[i] = tmp[(mFront + i) % tmp.size()];
-//        }
-//        mFront = 0;
-//      }
-
-      mVect.push_back(element);
+      int xxx = (mFront + mSize) % mVect.size();
+      mVect[xxx] = element;
     }
     void pop(){
-        mFront++;
+      mFront = (mFront + 1) % mVect.size();
     }
 
 };
@@ -112,6 +105,14 @@ void test3new() {
 
 }
 
+
+void test4() {
+  for (int i = 0;i < 100;i++) {
+    q.push(i);
+  }
+
+}
+
 void test3(){
   CP::queue<string> q;
   size_t n = 50000000;
@@ -127,6 +128,5 @@ int main() {
   test2(); cout << "test2 OK " << endl;
   test3new(); cout << "test3new OK " << endl;
 
-  //test3(); cout << "test3 OK " << endl;
 
 }
