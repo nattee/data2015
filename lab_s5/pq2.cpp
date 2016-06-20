@@ -25,34 +25,37 @@ class priority_queue {
       return mVect.empty();
     }
 
-    T top() {   // O(n)
-      int ans = mVect[0];
-      for (auto x : mVect) {
-        if (x > ans) ans = x;
-      }
-      return ans;
+    T top() { //O(1)
+      return mVect.back();
     }
 
-    void pop() { //O(n)
-      int max_pos = 0;
-      for (size_t i = 0;i < mVect.size();i++) {
-        if (mVect[i] > mVect[max_pos]) {
-          max_pos = i;
-        }
-      }
-      mVect.erase(mVect.begin() + max_pos);
-      //mVect.erase(find(mVect.begin(),mVect.end(),top()));
+    void pop() { //O(1) --> O(lg n)
+      mVect.pop_back();
     }
 
-    void push(T value) { //O(1)
-      mVect.push_back(value);
+    void push(T value) { //O(n) --> O(lg n)
+      // write this one
+      //mVect.push_back(value);
+      size_t pos = mVect.size()-1;
+      while (pos >= 0) {
+        if (mVect[pos] < value) break;
+        pos--;
+      }
+      if (pos < 0) pos++;
+      mVect.insert(mVect.begin() + pos + 1,value);
     }
 };
 }
 
+class AAA {
+  bool operator()(int x,int y) {
+    return x+10 > y;
+  }
+};
+
 
 void test1() {
-  CP::priority_queue<int> p1;
+  CP::priority_queue<int,AAA> p1;
 
   assert(p1.empty());
   assert(p1.size() == 0);
@@ -81,7 +84,7 @@ void test1() {
 
 void test2() {
   CP::priority_queue<int> p;
-  int n = 1e5;
+  int n = 1e3;
   for (int i = 0;i < n;i++) {
     p.push(i);
   }

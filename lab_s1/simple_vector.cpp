@@ -53,7 +53,6 @@ public:
 
   void insert(int pos, T value) {
     ensureCapacity(mSize+1);
-
     for (int i = mSize;i > pos;i--) {
       mData[i] = mData[i-1];
     }
