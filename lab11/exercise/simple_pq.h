@@ -14,12 +14,14 @@ class priority_queue
 {
   protected:
     std::vector<T> v;
+    int max;
 
   public:
     //-------------- constructor ----------
 
     // copy constructor
     priority_queue() {
+      max = INT_MIN;
     }
 
     // default constructor
@@ -30,23 +32,34 @@ class priority_queue
 
     //------------- capacity function -------------------
     bool empty() const {
-      return false;
+      return v.empty();
     }
 
     size_t size() const {
-      return 0;
+      return v.size();
     }
 
     //----------------- access -----------------
     const T& top() {
-      return v[0];
+      return max;
     }
 
-    //----------------- modifier -------------
     void push(const T& element) {
+      if (element > max) max = element;
+      v.push_back(element);
     }
 
     void pop() {
+      auto it_max = begin();
+      for (int i = 0;i < v.size();i++) {
+        if (v[i] > *it_max) {
+          it_max = begin() + i;
+        }
+      }
+      v.erase(it_max);
+      for (int i = 0;i < v.size();i++) {
+        if (v[i] > max) max = v[i];
+      }
     }
 
 

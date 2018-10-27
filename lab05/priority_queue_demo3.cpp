@@ -27,8 +27,18 @@ int main() {
   cout << pq.top().first << "," << pq.top().second << endl; pq.pop();
   cout << pq.top().first << "," << pq.top().second << endl; pq.pop();
 
+  AAA x = Compare;
+  if (x( make_pair(20,"x") , make_pair(30,"y")) ) {
+      cout << "hahaha" << endl;
+  }
+
+
   cout << endl << "priority_queue with custom comparator" << endl;
-  priority_queue<pair<int,string>,vector<pair<int,string>>, AAA > pq2(Compare);
+  priority_queue<
+    pair<int,string>,
+    vector<pair<int,string>>,
+    AAA >
+      pq2(Compare);
   pq2.push(make_pair(1 ,"BB"));
   pq2.push(make_pair(10,"BB"));
   pq2.push(make_pair(10,"A"));
